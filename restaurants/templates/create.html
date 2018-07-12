@@ -5,6 +5,24 @@
         <title>Create</title>
     </head>
     <body>
-        
+        {% comment %} <p>Name: {{restaurant_form.name}}</p>
+        <p>Description: {{restaurant_form.description}}</p>
+        <p>Opening Time: {{restaurant_form.opening_time}}</p>
+        <p>Closing Time: {{restaurant_form.closing_time}}</p>
+    </br>
+        <button>Save</button>
+
+</br> {% endcomment %}
+</br>
+<form action="{% url 'restaurant-create' %}" method="POST">
+        {% csrf_token %}
+        <p>Name: {{restaurant_form.name}}</p>
+        <p>Description: {{restaurant_form.description}}</p>
+        <p>Opening Time: {{restaurant_form.opening_time}}</p>
+        <p>Closing Time: {{restaurant_form.closing_time}}</p>
+    </br>
+        <input type="submit" value="Create">
+    </form>
+
     </body>
 </html>
