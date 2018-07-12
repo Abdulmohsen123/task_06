@@ -23,11 +23,11 @@ def restaurant_create(request):
     restaurant_form = RestaurantForm()
     if request.method == "POST":
         form = RestaurantForm(request.POST)
-        print("Form isss".format(form))
+        
         if form.is_valid():
             form.save()
             return redirect('restaurant-list')
-    print("Get Get Get")
+    
     context = {
         'restaurant_form': restaurant_form,
         }
